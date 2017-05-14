@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<!-- Head Section -->
+
+<head>
+    <title>calculator</title>
+    <script type="text/javascript">
+        //main
+        function calculate() {
+            // Invoke (call) readData function
+            var returnedNumberArray = readData();
+            // Validate the data
+            if (validate(returnedNumberArray)) {
+                var returnedResult = addNumbers(returnedNumberArray);
+                // Display result
+                displayResult(returnedResult);
+            }
+            else {
+                alert("calculate - Did not pass validation")
+            }
+        }
+        //INPUT    
+        //Read Data
+        function readData() {
+            // Create an Array to return the form data to the calling function
+            var numberArray = new Array();
+            // Retrieve the data from the form
+            var number1 = document.getElementById("num1").value;
+            var number2 = document.getElementById("num2").value;
+            // Populate the Array
+            numberArray[0] = number1;
+            numberArray[1] = number2;
+            // Return numberArray
+            return numberArray;
+        }
+        //PROCESS    
+        //Validate data
+        function validate(returnedNumberArray) {
+            //Set a flag to indicate if validation passes
+            var isValid = false;
+            //Check if data exists
+            if (checkDataExists(returnedNumberArray)) {
+                //Check if data is numeric && Check if data is positive
+                if (checkDataNumeric(returnedNumberArray) && checkDataPositive(returnedNumberArray)) {
+                    isValid = true;
+                }
+                else {}
+            }
+            else {
+                alert("validate - The data does NOT exist");
+            }
+            //Return isValid
+            return isValid;
+        }
+        //Check if data exists
+        function checkDataExists(returnedNumberArray) {
+            //Set a flag to indicate if validation passed
+            var isValid = false;
+            //Check if data exists
+            if (null != returnedNumberArray[0] && null != returnedNumberArray[1]) {
+                isValid = true;
+            }
+            else {}
+            //Return isValid
+            return isValid;
+        }
+        //Check if data is numeric
+        function checkDataNumeric(returnedNumberArray) {
+            //Set a flag to indicate if validation passes
+            var isValid = false;
+            //Check if data is numeric by using a ! (not) with isNaN() funct    
+            if (!Number.isNaN(returnedNumberArray[0]) && !Number.isNaN(returnedNumberArray[1])) {
+                isValid = true;
+            }
+            else {
+                alert("checkDataNumeric - Data is not numeric");
+            }
+            //Return isValid
+            return isValid;
+        }
+        //Check if data is positive
+        function checkDataPositive(returnedNumberArray) {
+            //Set a flag to indicate if validation passes
+            var isValid = false;
+            //Check if data is positive by checking if 0 or greater
+            if (returnedNumberArray[0] >= 0 && returnedNumberArray[1] >= 0) {
+                isValid = true;
+            }
+            else {
+                alert("checkDataPositive - Data is not positive");
+            }
+            //Return isValid
+            return isValid;
+        }
+        //Add two positive numbers
+        function addNumbers(returnedNumberArray) {
+            alert("addNumbers 1 " + returnedNumberArray);
+            //Variable to hold the result of the calculation
+            var result = 0;
+            alert("addNumbers 2 " + result);
+            // Cast the data into numbers and add together
+            result = parseInt(returnedNumberArray[0]) + parseInt(returnedNumberArray[1]);
+            alert("addNumbers 3 " + result);
+            //Return result
+            return result;
+        }
+        //OUTPUT    
+        //Display Results    
+        function displayResult(returnedResult) {
+            alert("The result is: " + returnedResult);
+        }
+    </script>
+</head>
+<!-- Body Section -->
+
+<body>
+    <header>
+        <h1>Calculator</h1> </header>
+    <main>
+        <form id="calculate">
+            <label for="num1">Number 1:</label>
+            <input id="num1" type=number />
+            <br />
+            <label for="num2">Number 2:</label>
+            <input id="num2" type=number />
+            <br />
+            <button id="calcBtn" onclick="calculate();">Calculate</button>
+        </form>
+    </main>
+    <footer>Footer Content</footer>
+</body>
+
+</html>
