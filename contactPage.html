@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <!-- Head Section -->
+    <head>
+        <title>Contact Page</title>
+        
+        <link rel="stylesheet" href="file.css">
+        
+        <script type="text/javascript">
+        function showInfo() {
+            // Retrive and Display name
+            var formName = document.getElementById("name");
+            alert("formName: " + formName.value);
+            // Retrieve and Display email
+            var formEmail = document.getElementById("email");
+            alert("formEmail: " + formEmail.value);
+            // Retrieve and Display Phone
+            var formPhone = document.getElementById("phone");
+            alert("formPhone: " + formPhone.value);
+            // Retrieve and Display a team
+            var formAnswer = document.getElementById("answer");
+            alert("formAnswer: " + formAnswer.value);
+        }
+    </script>
+        
+    </head>
+
+    <!-- Body Section -->
+    <body>
+        
+        
+        <header>
+        <h1>Summer Products</h1>
+            <nav>
+            <ul>
+                <li><a href="homePage.html">Home</a></li>
+                <li><a href="productsPage.html">Products</a></li>
+                <li><a href="contactPage.html">Contact</a></li>
+                <li><a href="aboutPage.html">About</a></li>
+                <li><a href="FAQPage.html">FAQ</a></li>
+            </ul>
+        </nav>
+        </header>
+        <main>
+      
+            
+            
+        <form id="myFirstForm">
+            <!-- Name -->
+            <label for="name">Name:</label>
+            <input id="name" type="text" placeholder="eg John" />
+            <br />
+            <!-- Email -->
+            <label for="email">Email:</label>
+            <input id="email" type="email" />
+            <br />
+            <!-- Phone -->
+            <label for="phone">Phone:</label>
+            <input id="phone" type="tel" />
+            <br />
+            <!-- Select -->
+            <!-- Inquiry -->
+            <label for="answer">Inquiry Type:</label>
+            <select id="answer">
+                <option value="business">Business</option>
+                <option value="social" selected>Social</option>
+            </select>
+            <br />
+            <h4>Coments</h4>
+            <!-- Text Area -->
+            <textarea>Here is some text inside my text area.</textarea>
+            <br />
+            <!-- Button -->
+            <button id="myFirstButton" type="submit" onclick="showInfo();">Click here!</button>
+        </form>
+    
+            
+          
+       <br /><br />
+        </main>
+        
+        <footer>Summer Products</footer>
+            
+    </body>
+</html>

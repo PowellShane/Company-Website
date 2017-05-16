@@ -1,0 +1,50 @@
+body {
+    background-color: wheat;
+}
+
+h1 {
+    color: red;
+    font-family: cursive;
+}
+
+h4 {
+    color: blue;
+    font-family: cursive;
+}
+
+p {
+    color: #fff719;
+    font-size: 24px;
+    background-color: cornflowerblue;
+}
+
+a {
+    color: firebrick;
+    font-size: 20px;
+}
+
+ul {
+    color: darkorchid;
+    font-size: 18px;
+    font-family: Arial;
+}
+
+a:hover {
+    background: orange;
+}
+
+.wrapper{
+    width: 940px;
+    margin: auto;
+}
+
+footer {
+    color: green;
+}
+
+
+header {
+    background: url("images/HeroImage.jpg") no-repeat center;
+    /*background-size: cover;*/
+    height: 300px;
+}
