@@ -1,2 +1,2 @@
-# DevProjects
+# Company Website
 Work Showcase
